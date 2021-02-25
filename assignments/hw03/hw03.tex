@@ -1,0 +1,153 @@
+\documentclass[]{article}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage[spanish, mexico]{babel}
+\usepackage[utf8]{inputenc}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{sol}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\setlength{\itemsep}{0.45in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\begin{center}
+{\huge Implementación de Modelos Computacionales TC2037-15}\\[1.5ex]
+{\large \textbf{Tarea 3 -- Programación Funcional II}\\[1.5ex] %You should put your name here
+} %You should write the date here.
+\end{center}
+
+\vspace{0.2 cm}
+
+{\footnotesize \textit{En esta tarea, practicarán con \textbf{funciones de orden superior} en Haskell. Por favor consideren que el objetivo de esta tarea es permitirles practicar e identificar fuerzas y áreas de oportunidad con respecto a su capacidad. Por lo mismo, se sugiere que no utilicen funciones ya implementadas. Para facilitar cuestiones de diseño, consideren que reciben solamente argumentos del tipo de dato adecuado.}}
+
+\section{\texttt{unique} (10\%)}
+
+Escriban una función en Haskell que reciba una cadena de caracteres y regrese otra que contenga sólo los caracteres únicos (todos los repetidos deben removerse).
+
+\section{\texttt{evenHigherNumbers} (10\%)}
+
+Generen una función en Haskell que extraiga todos los números pares de una lista de enteros y los devuelva en una nueva lista, pero esta vez usando orden superior en lugar de recursión.
+
+\section{\texttt{reduceMatrix} (20\%)}
+
+Implementen una función en Haskell que reciba una matriz (\textit{representación por filas}) y que devuelva la suma de todos sus elementos por medio de funciones de orden superior.
+
+\section{\texttt{maskedSum} (20\%)}
+
+La función \texttt{maskedSum} toma como entrada dos listas de la misma longitud, una de enteros y otra de booleans (no hay necesidad de verificaciones adicionales). La función debe sumar todos los elementos que correspondan a valores verdaderos, por ejemplo:
+
+\begin{center}
+	\includegraphics[scale=0.65]{../img/MaskedSum}	
+\end{center}
+
+\section{\texttt{multiples} (20\%)}
+
+La función \texttt{multiples} toma como entrada una lista de enteros y un número entero $x$, y devuelve aquellos números en la lista que sean múltiplos de $x$. Para esta versión de multiples, usen funciones de orden superior.
+
+\section{\texttt{combine} (20\%)}
+
+Generen una función en Haskell que reciba un número dos matrices $A$ y $B$ (de tipo genérico) de las mismas dimensiones, y que regresa una matriz de tuplas de la forma $(a, b)$ donde la $i$-esima tupla $(a_i, b_i)$ tendrá el $i$-ésimo elemento $a \in A$ y el $i$-ésimo elemento $b \in B$.
+
+\pagebreak
+
+\section*{Challenge III (+1 final)}
+
+\subsection*{\texttt{rotate}}
+Escriban una función en Haskell para rotar 90 grados en sentido de las manecillas del reloj una matriz de enteros, de la siguiente manera:
+
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{../img/Rotate}
+\end{center}
+
+\vspace{10ex}
+
+\section*{Entregables}
+
+\bigskip
+
+\begin{minipage}{0.1\linewidth}
+	\centering
+	\includegraphics[scale = 0.06]{../img/submit}
+\end{minipage}%
+\begin{minipage}{0.85\linewidth}
+	Preparen un archivo \texttt{.hs} que contenga las funciones requeridas y súbanlo a Canvas en el apartado correspondiente.
+	Por favor, no suban código fuente en otro formato no editable.
+\end{minipage}
+
+\vfill
+
+\begin{minipage}{0.1\linewidth}
+	\centering
+	\includegraphics[scale = 0.06]{../img/ribbon}
+\end{minipage}%
+\begin{minipage}{0.85\linewidth}
+	\textbf{En esta actividad me comprometo conmigo y mi equipo a asumir un rol activo honesto y responsable, basado en la confianza y la justicia y a no servirme de medios no autorizados o ilícitos para realizarla, siguiendo el Código de Ética del Tecnológico de Monterrey}.
+\end{minipage}
+
+\end{document}
