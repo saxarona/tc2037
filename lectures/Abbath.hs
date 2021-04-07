@@ -21,3 +21,22 @@ minusindex lst = map (\(x, y) -> x - y) zipped where
 -- [1, 1, 1, 1] if you call it like this
 
 -- minusindex [1, 2, 3, 4]
+
+index :: [Char] -> Char -> Int
+index [] _ = error "Character not found."
+index (x:xs) y = if x == y
+    then 1
+    else 1 + index xs y
+
+firstn :: [t] -> Int -> [t]
+firstn [] _ = []
+firstn _ 0 = []
+firstn (x:xs) n = x : firstn xs (n-1)
+
+
+lastn :: [t] -> Int -> [t]
+lastn [] _ = []
+lastn _ 0 = []
+lastn  (h:t) n = if length (h:t) <= n
+    then h:t
+    else lastn t n

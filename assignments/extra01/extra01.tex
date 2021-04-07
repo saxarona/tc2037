@@ -1,0 +1,136 @@
+\documentclass[]{article}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage[spanish, mexico]{babel}
+\usepackage[utf8]{inputenc}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{sol}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\setlength{\itemsep}{0.45in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\begin{center}
+{\huge Implementación de Modelos Computacionales TC2037-15}\\[1.5ex]
+{\large \textbf{Extra 01 -- Programación Funcional EX}\\[1.5ex] %You should put your name here
+} %You should write the date here.
+\end{center}
+
+\vspace{0.2 cm}
+
+{\footnotesize \textit{En esta tarea, practicarán con Haskell para implementar múltiples funciones. Por favor consideren que el objetivo de esta tarea es permitirles practicar e identificar fuerzas y áreas de oportunidad con respecto a su capacidad. Por lo mismo, se sugiere que no utilicen funciones ya implementadas. Para facilitar cuestiones de diseño, consideren que reciben solamente argumentos del tipo de dato adecuado.}}
+
+\section{\texttt{Challenge IV} (+1)}
+
+Genera una función en Haskell que, dado un árbol binario de búsqueda y un nodo, indique la profundidad de dicho nodo. Considera que la raíz de un árbol tiene profundidad 0. Se recomienda que para representar un árbol, utilices el formato siguiente \texttt{[root [left] [right]]}. El nodo \texttt{root} tiene como hijo izquierdo a la lista \texttt{left} (el subárbol izquierdo), y como hijo derecho al subárbol \texttt{right}.
+
+\bigskip
+
+\section{\texttt{Challenge V} (+1)}
+
+Genera una función en Haskell que, dado un grafo, indique el mayor de sus grados (es decir, el número de conexiones del nodo más conectado). Puedes usar cualquier representación de grafo que prefieras.
+
+\begin{itemize}
+	\item Una lista de adyacencia: \texttt{[[a, b, c], [b, a, d], [c, a, d], [d, b, c]]}
+	\item Una matriz de adyacencia: $$\begin{bmatrix}
+		0 & 1 & 1 & 0\\
+		1 & 0 & 0 & 1\\
+		1 & 0 & 0 & 1\\
+		0 & 1 & 1 & 0
+	\end{bmatrix}$$
+	\item Una tupla de vértices y ejes: \texttt{([a, b, c, d], [[a,b], [a, c], [b, a], \dots])}
+\end{itemize}
+
+
+\vspace{10ex}
+
+\section*{Entregables}
+
+\bigskip
+
+\begin{minipage}{0.1\linewidth}
+	\centering
+	\includegraphics[scale = 0.06]{../img/submit}
+\end{minipage}%
+\begin{minipage}{0.85\linewidth}
+	Preparen un archivo \texttt{.hs} que contenga las funciones requeridas y súbanlo a Canvas en el apartado correspondiente.
+	Por favor, no suban código fuente en otro formato no editable.
+\end{minipage}
+
+\vfill
+
+\begin{minipage}{0.1\linewidth}
+	\centering
+	\includegraphics[scale = 0.06]{../img/ribbon}
+\end{minipage}%
+\begin{minipage}{0.85\linewidth}
+	\textbf{En esta actividad me comprometo conmigo y mi equipo a asumir un rol activo honesto y responsable, basado en la confianza y la justicia y a no servirme de medios no autorizados o ilícitos para realizarla, siguiendo el Código de Ética del Tecnológico de Monterrey}.
+\end{minipage}
+
+\end{document}
