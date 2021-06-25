@@ -1,3 +1,5 @@
 *.synctex.gz
 .vscode/
 *.ipynb_checkpoints/
+*_minted*/
+.beam

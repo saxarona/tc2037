@@ -1,0 +1,44 @@
+\documentclass{article}
+
+\begin{document}
+
+\section{Birdwatching}
+
+Write a script in Prolog able to determine which bird is the one you're looking at given the following information about its taxonomy:
+
+If the family is albatross and the color is white, then the bird is the laysan albatross.
+Another bird of the same family is the black footed albatross, however its color is dark.
+If the voice (or call) of the bird is a muffled musical whistle and belongs to the swan family, then the bird is a whistling swan.
+However, noisier swans (like the trumpeter swan) exist on the same family, which voices resemble loud trumpeting.
+If its nostrils are external tubes, the bird lives at sea, and its bill is hooked, then it belongs to the tubenose order.
+It's easy to identify members of the waterfowl order if their feet are webbed and their bill is flat.
+If a bird of the tubenose order, is considered large, and its wings are long, then it belongs to the albatross family.
+If its neck is long, the color is white, its flight is ponderous and the bird belongs to the waterfowl order, then it also belongs to the swan family.
+
+The bird you're looking at has external tubes as nostrils, lives at sea, has a hooked bill, is considered large, has long wings and is dark-colored.
+
+You may need the \texttt{discontiguous/1} predicate at the top of your script, which receives a list of predicate \textit{signatures} (that is, \texttt{predicate/\#arguments}) of those predicates which can't be inferred from your source code. In other words, those predicates ``not used'' in your file, e.g. information about other birds which are not being observed.
+
+\pagebreak
+
+\section{The Spaceship}
+
+The crew of a derelict spaceship is asleep in the cryo-chambers.
+In the meantime, the MUL-T robot unit is preparing the uniforms and tools prior to landing, but a complete description of whom uses which tool is not provided. Instead, there are pieces of information scattered through the ship. The information reads:
+
+\begin{itemize}
+    \item The Commando has a shotgun.
+    \item The Engineer wears purple while the Loader prefers yellow.
+    \item The Mercenary has a blue suit.
+    \item Someone uses a white robe and a Kyaro's ring.
+    \item The Huntress wears red and has a bow.
+    \item The crew member with orange clothing holds a shotgun.
+    \item Two tactical turrets are the tools of the crew member who wears purple.
+    \item The katana belongs to the crew member in blue.
+    \item The Artificer uses a Kyaro's ring.
+    \item The crew member with a yellow vest uses a reinforced armor.
+\end{itemize}
+
+Write a program in prolog to generate a full description of the uniforms and tools of all six crew members.
+
+\end{document}
